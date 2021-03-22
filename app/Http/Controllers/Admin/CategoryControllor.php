@@ -163,7 +163,7 @@ class CategoryControllor extends Controller
     
     public function getCategories($parent_id = ''){
         $data['categories'] = Category::where('parent_id' , $parent_id)->get();
-        return view('admin/products/ajaxcategories' , $data);
+        return view('admin/blogs/ajaxcategories' , $data);
     }
 	
 }

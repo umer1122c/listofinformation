@@ -62,6 +62,18 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/users/{status}/{id}','Admin\UserControllor@updateStatus');
     Route::match(['post', 'get'],'/admin/user/edit/{id}','Admin\UserControllor@edit');
     Route::match(['post', 'get'],'/admin/send/notifications','Admin\UserControllor@sendPushNotification');
+
+     Route::get('/admin/listings/{type}','Admin\DataListingControllor@index');
+    Route::match(['post', 'get'], '/admin/listing/add/{type}','Admin\DataListingControllor@create');
+    Route::get('/admin/blog/delete/{id}','Admin\DataListingControllor@delete');
+    Route::get('/admin/cities/{id}','Admin\CountryControllor@getCities');
+    Route::match(['post', 'get'],'/admin/blog/edit/{id}','Admin\DataListingControllor@edit');
+
+     
+    Route::get('/admin/blogs','Admin\BlogControllor@index');
+    Route::match(['post', 'get'], '/admin/blog/add','Admin\BlogControllor@create');
+    Route::get('/admin/blog/delete/{id}','Admin\BlogControllor@delete');
+    Route::match(['post', 'get'],'/admin/blog/edit/{id}','Admin\BlogControllor@edit');
     
     Route::get('/admin/countries','Admin\CountryControllor@index');
     Route::match(['post', 'get'], '/admin/country/add','Admin\CountryControllor@create');

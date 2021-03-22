@@ -26,6 +26,37 @@
                                 <span class="title">Dashboard</span>
                             </a>
                         </li>
+                        <li class="nav-item dropdown <?php if($class == 'courses'){ echo 'open'; } ?>">
+                            <a class="dropdown-toggle" href="javascript:void(0);">
+                                <span class="icon-holder">
+                                    <i class=" ei-book"></i>
+                                </span>
+                                <span class="title">List Of Information</span>
+                                <span class="arrow">
+                                    <i class="ti-angle-right"></i>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{URL::to('admin/listings/1')}}">Education</a>
+                                </li>
+                                 <li>
+                                    <a href="{{URL::to('admin/listings/2')}}">Hotel</a>
+                                </li>
+                                 <li>
+                                    <a href="{{URL::to('admin/listings/3')}}">Medical</a>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="nav-item dropdown">
+                            <a class="dropdown-toggle " href="{{URL::to('admin/blogs')}}">
+                                <span class="icon-holder">
+                                    <i class="ei-file-image"></i>
+                                </span>
+                                <span class="title">Blogs</span>
+                            </a>
+                        </li>
+                        
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle " href="{{URL::to('admin/countries')}}">
                                 <span class="icon-holder">

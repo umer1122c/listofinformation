@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Country;
+use App\Models\City;
 use Session;
 use Validator;
 use Illuminate\Support\Facades\Hash;
@@ -127,5 +128,10 @@ class CountryControllor extends Controller
         
         
     }
+     public function getCities($country_id = ''){
+        $data['cities'] = City::where('country_id' , $country_id)->get();
+        return view('admin/listings/ajaxcities' , $data);
+    }
+	
 	
 }
